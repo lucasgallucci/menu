@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de supermercado</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+</head>
+<body>
+
+	<nav class="menu" id="main-menu">
+		<ul>
+			<li>
+				<a href="#home">Home</a>
+			</li>
+			<li>
+				<a href="#nosotros">Nosotros</a>
+			</li>
+			<li>
+				<a href="#servicios">Servicios</a>
+			</li>
+			<li>
+				<a href="#">Contacto</a>
+			</li>
+		</ul>
+	</nav>
+
+	<span id="cerrar">
+		menu
+	</span>
+
+
+	<section id="home">
+		<h2>HOME</h2>
+	</section>
+
+	<section id="nosotros">
+		<h2>NOSOTROS</h2>
+	</section>
+
+	<section id="servicios">
+		<h2>SERVICIOS</h2>
+	</section>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+	$(document).on("ready", function(){
+		menu=false;
+		altura=$("#main-menu").css("height");
+		$("#main-menu").css("top","-"+altura);
+
+
+		$("#cerrar").on("click",function(){	
+			if(menu){	
+				$("#main-menu").css("top","-"+altura);
+				$("#cerrar").html("menu")
+				menu=false;
+			}else{
+				$("#main-menu").css("top",0);
+				$("#cerrar").html("cerrar")
+				menu=true;
+			}
+		})
+
+		$("#main-menu ul li a").on("click", function(){
+			$("#main-menu").css("top","-"+altura);
+			$("#cerrar").html("menu")
+			menu=false;
+		})
+		
+
+		
+	})
+</script>	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

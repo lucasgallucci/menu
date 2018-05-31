@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<button id="nombre">Preguntar el nombre</button>
+
+	<div class="cuadrado"></div>
+
+	<button id="agregar">Agregar cuadrado</button>
+	<button id="rojo">Cambiar fondo</button>
+
+	<ul class="lista">
+		<li>Elemento 1</li>
+		<li>Elemento 2</li>
+		<li>Elemento 3</li>
+		<li>Elemento 4</li>
+		<li>Elemento 5</li>
+		<li>Elemento 6</li>
+	</ul>
+
+	
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).on("ready",function(){
+			$("#rojo").on("click", function(){
+				$("body").css("background","red"); //setter
+				alert("ahora el fondo es rojo")
+			})
+
+			$(".cuadrado").on("click",function(){
+				//$(this).toggleClass("negro");
+				color=$(this).css("background-color") //getter
+				alert(color)
+			})
+
+			$("#agregar").on("click",function(){
+				$("body").append("<div class='cuadrado'></div>");
+			})
+
+			$("ul.lista li").on("click", function(){
+				$(this).toggleClass("destacado");
+			})
+
+			$("#nombre").on("click",function(){
+				nombre=prompt("Escribí tu nombre");
+				$("body").prepend("<h1 id='saludo'></h1>");
+				$("#saludo").html("Hola "+ nombre)
+			})
+
+			$("#rojo").remove()
+		})
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de supermercado</title>
+</head>
+<body>
+
+	<label for="elemento">Agregar producto</label>
+	<input type="text" name="elemento" id="elemento">
+	<button id="agregar"> + </button>
+
+<ul id="lista">
+	
+</ul>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).on("ready",function(){
+		$("#agregar").on("click",function(){
+			producto=$("#elemento").val();
+			$("#elemento").val("");
+			$("#lista").append("<li>"+producto+" <button id='borrar'>borrar</button></li>");
+		})
+
+		$("body").on("click", "#borrar",function(){
+			$(this).parent().remove();
+		})
+	})
+
+</script>
+
+</body>
+</html>
